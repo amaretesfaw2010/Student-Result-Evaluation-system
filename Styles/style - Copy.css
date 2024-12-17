@@ -1,0 +1,177 @@
+﻿To give your web design a more professional look, I'll make a few adjustments to the CSS. This includes using a more modern font, refining the color scheme, and enhancing the overall layout and responsiveness. Here's the updated code:
+
+```css
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    transition: all 0.2s ease-out;
+    backface-visibility: hidden;
+}
+
+html, body {
+    height: 100%; /* Ensures the body takes the full height */
+    width: 100%; /* Ensures the body takes the full width */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+body {
+    background: url(https://subtlepatterns.com/patterns/tweed.png);
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-position: center; /* Centers the background image */
+}
+
+div.loginpanel {
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    div.loginpanel a.register {
+        color: #007BFF;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s, text-shadow 0.3s;
+    }
+
+        div.loginpanel a.register:hover {
+            color: #0056b3;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        div.loginpanel a.register:active {
+            color: #004085;
+            text-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+    div.loginpanel input {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    div.loginpanel div.txt input[type="text"],
+    div.loginpanel div.txt input[type="password"] {
+        padding: 12px 12px 12px 45px;
+        color: #555;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+        div.loginpanel div.txt input[type="text"]:hover,
+        div.loginpanel div.txt input[type="password"]:hover,
+        div.loginpanel div.txt input[type="text"]:focus,
+        div.loginpanel div.txt input[type="password"]:focus {
+            background-color: #fff;
+            border-color: #007BFF;
+        }
+
+        div.loginpanel div.txt input[type="text"]:focus,
+        div.loginpanel div.txt input[type="password"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+    div.loginpanel div.txt label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    div.loginpanel div.buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+        div.loginpanel div.buttons input {
+            flex: 1;
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2em;
+        }
+
+    div.loginpanel input[type="button"] {
+        cursor: pointer;
+        color: #fff;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 4px;
+        text-shadow: 0 1px #0056b3;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+        div.loginpanel input[type="button"]:hover,
+        div.loginpanel input[type="button"]:focus {
+            background-color: #0056b3;
+            box-shadow: 0 2px #004085, inset 0 0 #0056b3;
+        }
+
+        div.loginpanel input[type="button"]:active {
+            box-shadow: 0 0 #003366, inset 0 1px #003366;
+            transform: translateY(2px);
+        }
+
+    div.loginpanel div.social {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+        div.loginpanel div.social a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: #444;
+            color: #fff;
+            border-radius: 50%;
+            line-height: 50px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+            div.loginpanel div.social a:hover {
+                background-color: #007BFF;
+                transform: scale(1.1);
+            }
+
+            div.loginpanel div.social a.facebook {
+                background-color: #3b5998;
+            }
+
+            div.loginpanel div.social a.twitter {
+                background-color: #1da1f2;
+            }
+
+            div.loginpanel div.social a.googleplus {
+                background-color: #dd4b39;
+            }
+
+            div.loginpanel div.social a.facebook:hover {
+                background-color: #2d4373;
+            }
+
+            div.loginpanel div.social a.twitter:hover {
+                background-color: #1888c1;
+            }
+
+            div.loginpanel div.social a.googleplus:hover {
+                background-color: #c1351d;
+            }
+
+    div.loginpanel div.hr {
+        display: flex;
+        width: 100%;
+        margin: 40px 0;
+        border-bottom: 1px solid #ddd;
+    }
+

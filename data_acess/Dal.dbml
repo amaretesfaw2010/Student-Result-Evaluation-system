@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Assessment" Class="DalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-9N3PIKD\SQLEXPRESS;Initial Catalog=momlove;Integrated Security=True;Encrypt=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AssessmentConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Continous_Assesment" Member="Continous_Assesments">
+    <Type Name="Continous_Assesment">
+      <Column Name="Ass_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ass_type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ass_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="max_point" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Association Name="Continous_Assesment_tbl_result" Member="tbl_results" ThisKey="Ass_id" OtherKey="Ass_id" Type="tbl_result" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student" Member="students">
+    <Type Name="student">
+      <Column Name="stud_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="campus_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="mname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="dept" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="section" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="student_tbl_result" Member="tbl_results" ThisKey="campus_id" OtherKey="stud_id" Type="tbl_result" />
+      <Association Name="student_tbl_grade_roster" Member="tbl_grade_rosters" ThisKey="campus_id" OtherKey="campus_id" Type="tbl_grade_roster" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_grade" Member="tbl_grades">
+    <Type Name="tbl_grade">
+      <Column Name="grade_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Average" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_result" Member="tbl_results">
+    <Type Name="tbl_result">
+      <Column Name="result_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="stud_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ass_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="result" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Association Name="Continous_Assesment_tbl_result" Member="Continous_Assesment" ThisKey="Ass_id" OtherKey="Ass_id" Type="Continous_Assesment" IsForeignKey="true" />
+      <Association Name="student_tbl_result" Member="student" ThisKey="stud_id" OtherKey="campus_id" Type="student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_grade_roster" Member="tbl_grade_rosters">
+    <Type Name="tbl_grade_roster">
+      <Column Name="campus_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="roster_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="average" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="grade" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="student_tbl_grade_roster" Member="student" ThisKey="campus_id" OtherKey="campus_id" Type="student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.create_continous" Method="create_continous">
+    <Parameter Name="Ass_type" Parameter="ass_type" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Ass_name" Parameter="ass_name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="max_point" Type="System.Decimal" DbType="Decimal(6,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Fill_continous" Method="Fill_continous">
+    <Parameter Name="stud_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ass_id" Parameter="ass_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="result" Type="System.Decimal" DbType="Decimal(6,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.calculate_total" Method="calculate_total">
+    <Parameter Name="campus_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.view_continous" Method="view_continous">
+    <Parameter Name="campus_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="view_continousResult">
+      <Column Name="Ass_type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ass_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="max_point" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="stud_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="result" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.view_grade_total" Method="view_grade_total">
+    <Parameter Name="campus_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="view_grade_totalResult">
+      <Column Name="campus_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="mname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="dept" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="average" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="grade" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="viewi_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="section" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.login_user" Method="login_user">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="login_userResult">
+      <Column Name="campus_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="passwords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.check_passavaliability" Method="check_passavaliability">
+    <Parameter Name="newpass" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="check_passavaliabilityResult">
+      <Column Name="password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.change_password" Method="change_password">
+    <Parameter Name="oldpass" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="new_pass" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="campus_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.upload_photo" Method="upload_photo">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

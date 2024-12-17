@@ -1,0 +1,584 @@
+﻿/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: #f0f2f5; /* Light background for a clean, modern look */
+    line-height: 1.6;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0; /* Removed any padding from container */
+}
+
+/* Header */
+.header {
+    background: #4267b2; /* Facebook blue */
+    color: #fff;
+    padding: 10px 10px; /* Adjusted padding for prominence */
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 0; /* Removed margin to eliminate space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+
+    .header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+        .header .logo h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header .logo h2 {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 0;
+            font-weight: 300;
+        }
+
+    .header .cta-button {
+        background: #4c8bf5; /* Call-to-action button with blue color */
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: none;
+        transition: background 0.3s ease;
+    }
+
+        .header .cta-button:hover {
+            background: #3578e5; /* Slightly darker blue on hover */
+        }
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0; /* Removed margin to remove the space */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .sidebar .side-menu {
+        list-style: none;
+        padding: 0;
+    }
+
+        .sidebar .side-menu li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar .side-menu a {
+            color: #1c1e21;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+            .sidebar .side-menu a:hover {
+                background: #f0f2f5;
+            }
+
+/* Main Feed */
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+/* Post Design */
+.post {
+    background: #f0f2f5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .post-header img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    .post-header .user-name {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+.post-body {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+    .post-footer button {
+        background: none;
+        border: none;
+        color: #4267b2;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .post-footer button:hover {
+            color: #1d6db3;
+        }
+
+/* Footer */
+/* Footer */
+.footer {
+    background: #4267b2; /* Facebook blue */
+    color: #fff;
+    text-align: center;
+    padding: 20px; /* Increased padding for better spacing */
+    font-size: 1em; /* Adjusted font size for better readability */
+    width: 100%;
+    border-top: 2px solid #4c8bf5; /* Subtle border at the top for professionalism */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    position: absolute; /* Ensure it stays at the bottom */
+    bottom: 0;
+    left: 0;
+    margin-top: auto; /* Ensures it stays at the bottom when content is short */
+}
+
+/* Ensuring the footer doesn't push the content */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Optional: Improve footer text appearance */
+.footer p {
+    font-size: 0.8em; /* Smaller text for footer content */
+    color: #f0f2f5; /* Lighten the footer text */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        margin: 0;
+        height: auto;
+    }
+
+    .header {
+        padding: 20px;
+        margin: 0; /* Removed margin for consistency */
+    }
+}
+/*controlls*/
+/* General Button Style */
+button, .cta-button, .sidebar .side-menu a {
+    background-color: #4c8bf5; /* Primary button color */
+    color: #fff; /* White text */
+    border: none; /* Remove default button borders */
+    padding: 10px 20px; /* Padding for a good click area */
+    font-size: 1em; /* Standard font size */
+    font-weight: bold; /* Bold text for emphasis */
+    border-radius: 25px; /* Rounded corners for buttons */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allows block and inline behavior */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+    /* Hover effects for buttons */
+    button:hover, .cta-button:hover, .sidebar .side-menu a:hover {
+        background-color: #3578e5; /* Slightly darker blue on hover */
+        cursor: pointer; /* Change cursor on hover */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+    }
+
+/* Input Fields */
+input[type="text"], input[type="password"], input[type="email"], textarea {
+    background-color: #fff; /* White background for inputs */
+    color: #333; /* Dark text for readability */
+    padding: 12px 15px; /* Generous padding */
+    font-size: 1em; /* Standard font size */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Subtle border */
+    width: 100%; /* Full width for inputs */
+    margin-bottom: 15px; /* Space between input fields */
+    box-sizing: border-box; /* Ensure padding does not overflow */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+    /* Focus effect for inputs */
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+        border-color: #4c8bf5; /* Highlight border on focus */
+        outline: none; /* Remove default outline */
+    }
+
+/* Textarea */
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+    height: 150px; /* Set a default height */
+}
+
+/* Links */
+a {
+    color: #1c1e21; /* Dark color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links stand out */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+    /* Hover effects for links */
+    a:hover {
+        color: #3578e5; /* Change color on hover */
+    }
+
+/* Dropdowns (Select boxes) */
+select {
+    background-color: #fff;
+    color: #333;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+    /* Focus effect for select */
+    select:focus {
+        border-color: #4c8bf5;
+        outline: none;
+    }
+
+/* Customizing Checkbox and Radio Buttons */
+input[type="checkbox"], input[type="radio"] {
+    accent-color: #4c8bf5; /* Use the primary color for checkboxes and radios */
+    width: 18px;
+    height: 18px;
+    margin-right: 10px; /* Space between checkbox/radio and label */
+}
+
+/* Labels */
+label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* Card Style (for posts, side panels, etc.) */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between cards */
+}
+
+/* Card Header */
+.card-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Modal Style */
+.modal {
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    color: #fff; /* White text */
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center modal */
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    display: none; /* Hidden by default */
+    z-index: 9999;
+}
+
+    .modal.active {
+        display: block; /* Show modal when active */
+    }
+
+    /* Close Button */
+    .modal .close-btn {
+        background-color: #ff4d4f; /* Red background */
+        color: #fff;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+        .modal .close-btn:hover {
+            background-color: #d9534f; /* Darker red on hover */
+        }
+
+/* Navbar (if you have one) */
+.navbar {
+    background-color: #1877f2; /* Facebook blue */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .navbar .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+            .navbar .nav-links a:hover {
+                color: #3578e5; /* Hover color for nav links */
+            }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination a {
+        color: #1877f2;
+        padding: 10px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+        .pagination a:hover {
+            background-color: #3578e5; /* Darker hover effect */
+            color: white;
+        }
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: #f0f2f5; /* Light background for a clean, modern look */
+    line-height: 1.6;
+}
+
+/* Page Structure */
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: #4267b2; /* Facebook blue */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+    .header .title h3 {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 2px;
+    }
+
+        .header .title h3 img {
+            margin-right: 15px;
+        }
+
+/* Login Section */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 30px;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+    .login-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+    }
+
+    .login-container .form-group {
+        margin-bottom: 20px;
+    }
+
+    .login-container label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+        color: #333;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"],
+    .login-container input[type="email"] {
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        padding: 12px;
+        font-size: 1em;
+        width: 100%;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+    }
+
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus,
+        .login-container input[type="email"]:focus {
+            border-color: #4267b2;
+            outline: none;
+        }
+
+    /* Button Style */
+    .login-container button {
+        background-color: #4267b2;
+        color: #fff;
+        padding: 12px;
+        font-size: 1.1em;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .login-container button:hover {
+            background-color: #3578e5;
+        }
+
+    .login-container .login-link {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #4267b2;
+        text-decoration: none;
+        font-size: 0.9em;
+    }
+
+        .login-container .login-link:hover {
+            color: #3578e5;
+        }
+
+/* Footer */
+.footer {
+    background: #4267b2;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+    }
+
+        .login-container h2 {
+            font-size: 1.2em;
+        }
+}

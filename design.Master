@@ -1,0 +1,66 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="design.master.cs" Inherits="WebApplication1.design" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Online Student Assessment Evaluation System</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="logo">
+                    <asp:Image ID="LogoImage" runat="server" ImageUrl="~/images.jpg" Width="50px" />
+                  <%--  <h1>University of Gondar</h1>
+                    <h2>Student Result Evaluation System</h2>--%>
+                </div>
+                <div class="loginDisplay">
+    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+        <AnonymousTemplate>
+            Developed by: Amare Tesfaw 
+            <asp:Image ID="DevImage" runat="server" ImageUrl="~/amates.png" Width="40px" />
+            [ <a href="../login/login.aspx">Log In</a> ] 
+            [ <a href="../login/logout.aspx">Log Out</a> ]
+        </AnonymousTemplate>
+        <LoggedInTemplate>
+            Welcome, <asp:LoginName ID="HeadLoginName" runat="server" />!
+            [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutText="Log Out" LogoutAction="Redirect" LogoutPageUrl="~/login/logout.aspx" /> ]
+        </LoggedInTemplate>
+    </asp:LoginView>
+</div>
+
+            </div>
+
+            <!-- Main Layout -->
+            <div class="main-layout">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="side-menu" DynamicHorizontalOffset="10" StaticSubMenuIndent="25">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/teacher/create_assessment.aspx" Text="Create Assessment" />
+                            <asp:MenuItem NavigateUrl="~/teacher/fill_continous.aspx" Text="Fill Continuous" />
+                            <asp:MenuItem NavigateUrl="~/teacher/calculate_grade_total_average.aspx" Text="Calculate Grades" />
+                            <asp:MenuItem NavigateUrl="~/teacher/view_continous.aspx" Text="View Continuous" />
+                            <asp:MenuItem NavigateUrl="~/teacher/view_grade.aspx" Text="View Grades" />
+                            <asp:MenuItem NavigateUrl="~/teacher/change_mypassword.aspx" Text="Change Password" />
+                        </Items>
+                    </asp:Menu>
+                </div>
+
+                <!-- Main Content -->
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; 2024 amare Tesfaw. All Rights Reserved.</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Dal">
+  <DataContextMoniker Name="/DalDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d7571844-ab32-404f-abf4-80877ca0b3da" absoluteBounds="0.75, 0.875, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/DalDataContext/Continous_Assesment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4e577b0-4dec-4547-be68-4de9674e151b" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a33780d6-4ffe-46c2-a1e3-15343613d9e9" absoluteBounds="0.75, 4.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DalDataContext/student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d7813eb-5cb6-43c2-9192-4570a2922fac" absoluteBounds="0.765, 5.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64107b62-cda8-4ab5-8794-cb030b16c581" absoluteBounds="3.75, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DalDataContext/tbl_grade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bebb91a-cfa8-49b3-8da9-aee78bd32cd1" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb087b9b-7118-489e-84ef-6fcc1967331f" absoluteBounds="3.5, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DalDataContext/tbl_result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b91d835-efe6-471c-af12-ef73241edb3d" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.66429768880208); (3.5 : 1.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DalDataContext/Continous_Assesment/Continous_Assesment_tbl_result" />
+      <nodes>
+        <classShapeMoniker Id="d7571844-ab32-404f-abf4-80877ca0b3da" />
+        <classShapeMoniker Id="eb087b9b-7118-489e-84ef-6fcc1967331f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.08579752604167); (3.59375 : 6.08579752604167); (3.59375 : 2.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DalDataContext/student/student_tbl_result" />
+      <nodes>
+        <classShapeMoniker Id="a33780d6-4ffe-46c2-a1e3-15343613d9e9" />
+        <classShapeMoniker Id="eb087b9b-7118-489e-84ef-6fcc1967331f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ff261dfa-f831-446b-ac8e-35a81d551d13" absoluteBounds="5.75, 1.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DalDataContext/tbl_grade_roster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49155195-7659-4e6b-a687-86f56827e579" absoluteBounds="5.765, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.70719395182292); (6.78125 : 5.70719395182292); (6.78125 : 3.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DalDataContext/student/student_tbl_grade_roster" />
+      <nodes>
+        <classShapeMoniker Id="a33780d6-4ffe-46c2-a1e3-15343613d9e9" />
+        <classShapeMoniker Id="ff261dfa-f831-446b-ac8e-35a81d551d13" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

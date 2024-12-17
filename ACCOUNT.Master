@@ -1,0 +1,52 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ACCOUNT.master.cs" Inherits="WebApplication1.ACCOUNT" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Online Student Assessment Evaluation System</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/style.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="logo">
+                    <asp:Image ID="LogoImage" runat="server" ImageUrl="~/images.jpg" Width="50px" AlternateText="University of Gondar Logo" />
+                </div>
+                <div class="loginDisplay">
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            Developed by: Amare Tesfaw 
+                            <asp:Image ID="DevImage" runat="server" ImageUrl="~/amates.png" Width="40px" AlternateText="Developer Icon" />
+                            [ <a href="~/login/login.aspx">Log In</a> ]
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Welcome, <asp:LoginName ID="HeadLoginName" runat="server" />!
+                            [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/login/logout.aspx" /> ]
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+
+            <!-- Main Layout -->
+            <div class="main-layout">
+                <!-- Sidebar -->
+              
+
+                <!-- Main Content -->
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; 2024 University of Gondar. All Rights Reserved. | Developed by Amare Tesfaw</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
