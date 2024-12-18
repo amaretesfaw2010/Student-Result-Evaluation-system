@@ -1,4 +1,4 @@
-# my website
+# student result evaluation 
 login ![image](https://github.com/user-attachments/assets/74ff3c4a-a576-4aeb-b848-1563637c1267)
 Student Home: ![image](https://github.com/user-attachments/assets/9c7a139c-84d6-4e62-8c62-c3de28139a64)
 Student view continous: ![image](https://github.com/user-attachments/assets/9ff45f11-ec6e-44ad-b00a-e387806ac094)
